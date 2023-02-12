@@ -13,7 +13,7 @@ jobs:
           with:
             node-version: 18
             cache: yarn
-        - uses: redkubes/docusaurus-deploy-action@latest
+        - uses: redkubes/docusaurus-deploy-action@v2
           with:
             source-folder: ./
             git-user: anvie
