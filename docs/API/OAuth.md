@@ -1,20 +1,17 @@
 ---
+id: oauth
 hide_title: true
-sidebar_label: API
+sidebar_label: OAuth
 sidebar_position: 2
 ---
 
-## Application Programming Interface
+# Otentikasi &amp; Otorisasi
 
-NU.ID menyediakan API yg memungkinkan pengembang untuk mengintegrasikan layanan mereka ke dalam ekosistem digital NU. Hal ini memungkinkan Anda untuk mengelola akses dan otorisasi yang tepat kepada pengguna.
+NU.ID menggunakan [OAuth 2.0](https://oauth.net/2/) sebagai metode untuk authentication dan authorization. [OAuth 2.0](https://oauth.net/2/) adalah protokol standar yang digunakan untuk memberikan akses ke aplikasi pihak ketiga terhadap sumber daya yang dilindungi. Ini memungkinkan pengguna untuk memberikan izin kepada aplikasi pihak ketiga untuk mengakses data mereka tanpa harus memberikan kata sandi mereka. Dengan menggunakan OAuth v2, NU.ID dapat memberikan keamanan dan kontrol yang lebih baik kepada pengguna.
 
-NU.ID menggunakan protokol standar [Oauth 2.0](https://oauth.net/2/) dalam mengotentikasi pengguna. Pengembang dapat menggunakan API ini untuk mengotentikasi pengguna dan terhubung ke layanan mereka.
-
-## Daftar API endpoint
+## Daftar API endpoint OAuth
 
 Semua endpoint API berikut dapat diakses menggunakan base URL `https://nu.id/api`
-
-### OAuth 2.0
 
 | Endpoint | Deskripsi |
 | --- | --- |
@@ -38,7 +35,7 @@ Inisiasi proses autentikasi pengguna menggunakan standar OAuth 2.0.
 * `client_id`: ID klien yang digunakan untuk membuat permintaan OAuth.
 * `redirect_uri`: URL yang akan dikunjungi setelah Anda berhasil login.
 * `state`: Parameter yang dicantumkan pada permintaan OAuth.
-* `scope`: (opsional) daftar otorisasi yang diperlukan oleh aplikasi.
+* `scope`: (opsional) daftar otorisasi yang diperlukan oleh aplikasi. Lihat [daftar otorisasi](#daftar-otorisasi) untuk daftar lengkap otorisasi yang didukung.
 
 **Respon:**
 
@@ -100,3 +97,11 @@ Membatalkan atau menghapus token akses OAuth.
 
 **Respons:**
 Tidak ada.
+
+
+## Daftar Otorisasi
+
+| Otorisasi | Deskripsi |
+| --- | --- |
+| `basic_info` | Mengakses info nama dan alamat email (read-only) |
+| `phone` | Mengakses nomor telepon (read-only) |
