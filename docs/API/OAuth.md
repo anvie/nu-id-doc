@@ -52,10 +52,10 @@ Mendapatkan token akses OAuth 2 dari kode OAuth yang didapatkan sebelumnya melal
 
 **Parameter:**
 
-* `grant_type`: jenis permintaan. `authorization_code` harus dipilih untuk menggunakan endpoint ini.
-* `code`: Token OAuth yang didapatkan dari endpoint `/oauth/authorize`.
-* `redirect_uri`: URL yang dicantumkan dalam permintaan OAuth.
 * `client_id`: ID klien yang digunakan untuk membuat permintaan OAuth.
+* `client_secret`: Kunci rahasia klien yang didapatkan ketika mendaftarkan klien pertama kali.
+* `code`: Token OAuth yang didapatkan dari endpoint `/oauth/authorize`.
+* `redirect_uri`: URL yang akan dikunjungi setelah user berhasil login.
 
 **Respons:**
 
