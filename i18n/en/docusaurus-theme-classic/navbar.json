@@ -1,0 +1,10 @@
+{
+  "title": {
+    "message": "NU.ID",
+    "description": "The title in the navbar"
+  },
+  "item.label.Dokumentasi": {
+    "message": "Dokumentasi",
+    "description": "Navbar item with label Dokumentasi"
+  }
+}

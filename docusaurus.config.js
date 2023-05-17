@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'NU.ID',
-  tagline: 'NU.ID adalah platform identitas dan manajemen akses (IAM) untuk ekosistem digital NU. Memungkinkan Anda dalam mengakses semua layanan digital NU dengan mudah dan aman dalam sekali akses',
+  tagline: 'NU.ID merupakan platform identitas tunggal, merupakan jembatan menuju visi "Satu Data NU"',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -76,7 +76,7 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Dokumentasi',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           // {
@@ -93,7 +93,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Dokumentasi',
                 to: '/docs/intro',
               },
             ],
