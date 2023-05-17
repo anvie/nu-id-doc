@@ -14,9 +14,9 @@ jobs:
             node-version: '18'
         - name: Install Yarn
           run: npm install -g yarn
-        - name: Deploying
-          run: |
-            git config --global user.email "nu-id-doc-deploy@users.noreply.github.com"
-            git config --global user.name "NU.ID Doc Deploy"
-            echo "machine github.com login anvie password ${{ secrets.ACCESS_KEY }}" > ~/.netrc
-            yarn && GIT_USER=anvie PUBLISHING=true yarn deploy
+        - run: yarn install
+        - run: yarn build
+        - uses: peaceiris/actions-gh-pages@v2
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./build
