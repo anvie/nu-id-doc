@@ -7,7 +7,7 @@ sidebar_position: 3
 
 # QRAuth
 
-QRAuth adalah metode otentikasi yang menggunakan QR Code. Metode ini memungkinkan pengguna untuk melakukan login ke berbagai layanan secara cepat dan mudah dengan cukup memindai QR Code yang ditampilkan di layar layanan menggunakan aplikasi NU Online.
+QRAuth adalah metode otentikasi yang menggunakan QR Code. Metode ini memungkinkan pengguna untuk melakukan login ke berbagai layanan secara cepat dan mudah dengan cukup memindai QR Code yang ditampilkan di layar layanan menggunakan aplikasi [NU Online](https://app.nu.or.id/).
 
 ## API Endpoint
 
