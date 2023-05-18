@@ -5,7 +5,7 @@ title: Endpoint
 
 ## Daftar Endpoint
 
-Semua endpoint API berikut dapat diakses menggunakan base URL `https://nu.id/api`, NU.ID menggunakan versioning API dengan format `v{version-number}`. Saat ini versi API yang digunakan adalah `v1`. Sehingga base URL untuk API adalah `https://nu.id/api/v1`. Contoh untuk mengakses `/user/me` adalah `https://nu.id/api/v1/user/me`.
+Semua endpoint API berikut dapat diakses menggunakan base URL `https://api.nu.id`, NU.ID menggunakan versioning API dengan format `v{version-number}`. Saat ini versi API yang digunakan adalah `v1`. Sehingga base URL untuk API adalah `https://api.nu.id/v1`. Contoh untuk mengakses `/user/me` adalah `https://api.nu.id/v1/user/me`.
 
 | Endpoint | Deskripsi |
 | --- | --- |
