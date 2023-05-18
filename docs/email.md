@@ -13,6 +13,8 @@ Untuk mendapatkan alamat email dengan domain `@nu.id`, pengguna harus terdaftar 
 
 Contoh alamat email: robin@nu.id
 
+Setelah diaktifkan, email `@nu.id` bisa digunakan untuk login dan menjadi alternatif selain alamat email yang digunakan untuk registrasi.
+
 **Limitasi:**
 
 - Pengguna NU.ID hanya dapat memiliki satu alamat email dengan domain `@nu.id`.
