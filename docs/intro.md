@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Apa itu NU.ID
 
-NU.ID adalah platform identitas tunggal dan manajemen akses (IAM) yang memungkinkan integrasi keseluruh ekosistem digital NU.
+NU.ID adalah platform identitas tunggal dan manajemen akses (IAM) yang memungkinkan integrasi ke seluruh ekosistem digital NU.
 
 NU.ID merupakan jembatan menuju visi "Satu Data NU" yang merupakan program transformasi digital dalam menyongsong satu abad Nahdlatul Ulama. NU.ID memungkinkan pengguna untuk melakukan otorisasi dan autentikasi pada berbagai macam layanan NU secara terintegrasi dengan satu akun.
 

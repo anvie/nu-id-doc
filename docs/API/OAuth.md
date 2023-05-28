@@ -11,7 +11,7 @@ NU.ID menggunakan [OAuth 2.0](https://oauth.net/2/) sebagai metode untuk authent
 
 ## Daftar API endpoint OAuth
 
-Semua endpoint API berikut dapat diakses menggunakan base URL `https://nu.id/api`
+Semua endpoint API berikut dapat diakses menggunakan base URL `https://api.nu.id`
 
 | Endpoint | Deskripsi |
 | --- | --- |
