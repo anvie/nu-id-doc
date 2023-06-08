@@ -105,7 +105,7 @@ Endpoint ini akan mengembalikan token akses (`accessToken`) dan token penyegar (
 
 ```json
 POST / api / authenticate HTTP / 1.1
-Host: example.com
+Host: api.nu.id
 Content-Type: application/json
 
 {
