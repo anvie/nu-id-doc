@@ -7,7 +7,7 @@ NUSA adalah sistem yang dirancang untuk membangun ekosistem digital Nahdlatul Ul
 
 Standar NUSA menjadi acuan dalam pembangunan layanan-layanan digital NU yang terintegrasi, sehingga layanan-layanan tersebut dapat saling berinteraksi secara harmonis dan memudahkan baik dari sisi pengguna maupun pengelola layanan.
 
-Sistem NUSA dibangun dengan semangat besar untuk mencapai terbentuknya visi **Satu Data NU** yang merupakan program transformasi digital dalam menyongsong satu abad Nahdlatul Ulama.
+Sistem NUSA dibangun dengan semangat besar untuk mencapai visi **Satu Data NU** yang merupakan program transformasi digital dalam menyongsong satu abad Nahdlatul Ulama.
 
 Sistem NUSA membantu para pengelola layanan digital di NU untuk lebih terorganisir, sehingga memudahkan dalam mengelola layanan yang mereka miliki. Dalam pembangunan sistem NUSA, terdapat berbagai layanan digital yang terintegrasi seperti NU Online, Siskader NU, LazisNU, NU Event, dll.
 
