@@ -13,6 +13,7 @@ Endpoint API berikut digunakan untuk mendapatkan informasi pengguna yang sedang 
 | Endpoint | Deskripsi |
 | --- | --- |
 | [/user/me](#user-me) | Mendapatkan informasi pengguna |
+| [/user/update](#user-update) | Mengubah informasi dasar pengguna |
 
 
 ### User Me
@@ -43,6 +44,32 @@ Contoh respons:
   "name": "John Doe",
   "email": "john@example.com",
   "image": "https://example.com/image.jpg"
+}
+```
+
+### User Update
+
+**Endpoint**: `/user/update`
+
+Mengubah informasi dasar pengguna. Sementara ini informasi yang dapat diubah hanyalah `image`, mungkin kedepannya akan ditambahkan yang lainnya.
+
+Operasi ini membutuhkan akses token dengan scope [`update_basic_info`](../API/oauth#daftar-otorisasi-scope).
+
+**Method:** POST
+
+**Parameter:**
+
+* `image`: URL gambar profil pengguna.
+
+**Respons:**
+
+Json dengan result "ok" jika berhasil.
+
+Contoh respons:
+
+```json
+{
+  "result": "ok"
 }
 ```
 

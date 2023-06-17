@@ -99,9 +99,14 @@ Membatalkan atau menghapus token akses OAuth.
 Tidak ada.
 
 
-## Daftar Otorisasi
+## Daftar Otorisasi (Scope)
+
+Berikut adalah daftar otorisasi atau scope yang didukung oleh NU.ID.
 
 | Otorisasi | Deskripsi |
 | --- | --- |
 | `basic_info` | Mengakses info nama dan alamat email (read-only) |
 | `phone` | Mengakses nomor telepon (read-only) |
+| `add_key` | Menambahkan kunci publik (write-only) |
+| `update_basic_info` | Mengubah info dasar pengguna diataranya: nama dan photo (write-only) |
+
