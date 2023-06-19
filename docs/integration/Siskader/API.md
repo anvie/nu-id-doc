@@ -6,14 +6,15 @@ title: API
 
 # Dokumentasi API Siskader
 
-Endpoint API berikut digunakan untuk mendapatkan informasi pengguna yang berkaitan dengan informasi kader.
+Endpoint API berikut digunakan untuk mendapatkan informasi pengguna yang berkaitan dengan kader.
 
 > **Catatan:** API yang tercantum di bawah ini merupakan API yang dapat diakses melalui NusaGW. 
 > Apabila Anda belum mengenal NusaGW, silakan baca [dokumentasi NusaGW](../NUSA/nusa-gateway) terlebih dahulu.
 > API ini masih dalam tahap pengembangan dan dapat berubah sewaktu-waktu tanpa pemberitahuan sebelumnya.
 
 
-Semua endpoint API berikut dapat diakses menggunakan base URL `https://siskader.nusa.nu.id`, NU.ID menggunakan versioning API dengan format `v{version-number}`. Saat ini versi API yang digunakan adalah `v1`. Sehingga base URL untuk API adalah `https://siskader.nusa.nu.id/v1`. Contoh untuk mengakses `/kader/[id]` adalah `https://siskader.nusa.nu.id/v1/kader/CBqdbvpOwDV2gC3bSbeIpVMEdmfkB6`.
+Semua endpoint API berikut dapat diakses menggunakan base URL `https://siskader.nusa.nu.id`.
+Semua endpoint API selain `/info` membutuhkan _access token_ yang dapat diperoleh dengan mengikuti prosedur OAuth yang dijelaskan di [dokumentasi otentikasi & otorisasi](../../API/OAuth.md).
 
 | Endpoint | Deskripsi |
 | --- | --- |
@@ -40,17 +41,11 @@ Contoh respon apabila sukses:
 ```json
 {
     "app": {
-    "id": "CLavgeYcIoIlI6iayifIzjvjQWm14wPf",
-    "name": "Siskader",
-    "description": "siskader app",
-    "slug": "siskader",
-    "owner_id": "clhr7ynrk0000jbyd5d6f0y0w",
-    "redirect_uris": [
-        "https://siskader.nu.id/api/auth/callback/nu.id",
-        "http://localhost:3001/api/auth/callback/nu.id"
-    ],
-    "createdAt": "2023-05-17T04:51:17.398Z",
-    "nusa_gateway": "https://siskader.nusa.nu.id"
+        "id": "CLavgeYcIoIlI6iayifIzjvjQWm14wPf",
+        "name": "Siskader",
+        "description": "siskader app",
+        "nusa_gateway": "https://siskader.nusa.nu.id"
+    }
 }
 ```
 

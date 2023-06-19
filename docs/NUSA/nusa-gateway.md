@@ -34,6 +34,6 @@ Berikut adalah daftar layanan resmi yang telah terintegrasi dengan NusaGW dan da
 
 | Layanan | Sub-domain | Deskripsi |
 | --- | --- | --- |
-| Siskader | [siskader.nusa.nu.id](https://siskader.nusa.nu.id/v1/info) | Sistem Informasi Kaderisasi NU |
+| [Siskader](../integration/Siskader/index.md) | [siskader.nusa.nu.id](https://siskader.nusa.nu.id/v1/info) | Sistem Informasi Kaderisasi NU |
 | Coofis | [coofis.nusa.nu.id](https://coofis.nusa.nu.id/v1/info) | Sistem Disposisi Surat NU |
 
