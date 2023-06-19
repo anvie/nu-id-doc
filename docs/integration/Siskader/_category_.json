@@ -1,0 +1,12 @@
+{
+  "label": "Siskader",
+  "position": 2,
+  "collapsed": false,
+  "customProps": {
+    "description": "The API is the interface that allows you to interact with the platform. It is a RESTful API that uses JSON for serialization and OAuth 2.0 for authentication."
+  },
+  "link": {
+    "type": "doc",
+    "id": "siskader-intro"
+  }
+}

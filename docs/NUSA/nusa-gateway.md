@@ -28,4 +28,12 @@ Contoh sub-domain untuk aplikasi Siskader, maka domainnya adalah:
 siskader.nusa.nu.id
 ```
 
-_to be continued..._
+### Daftar Layanan Resmi
+
+Berikut adalah daftar layanan resmi yang telah terintegrasi dengan NusaGW dan dapat diakses melalui sub-domain masing-masing:
+
+| Layanan | Sub-domain | Deskripsi |
+| --- | --- | --- |
+| Siskader | [siskader.nusa.nu.id](https://siskader.nusa.nu.id/v1/info) | Sistem Informasi Kaderisasi NU |
+| Coofis | [coofis.nusa.nu.id](https://coofis.nusa.nu.id/v1/info) | Sistem Disposisi Surat NU |
+
