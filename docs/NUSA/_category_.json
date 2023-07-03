@@ -2,7 +2,7 @@
   "label": "NUSA",
   "position": 2,
   "collapsible": true,
-  "collapsed": true,
+  "collapsed": false,
   "link": {
     "type": "doc",
     "id": "nusa-index"

@@ -12,7 +12,7 @@ secara aman dan terstruktur, sesuai dengan standar yang telah ditetapkan.
 
 ### Domain
 
-Setiap aplikasi yang telah terdaftar di NU.ID akan memiliki sub-domain yang unik untuk mengakses layanan mereka. Domain ini akan digunakan sebagai endpoint untuk mengakses layanan tersebut melalui NusaGW.
+Setiap aplikasi yang telah terdaftar di NU.ID akan memiliki sub-domain yang unik untuk mengakses layanan mereka. Domain ini akan digunakan sebagai endpoint untuk mengakses layanan tersebut melalui NusaGW. Ketika pertama kali aplikasi dibuat, nama sub-domain akan otomatis dibuatkan oleh sistem diambil dari nama aplikasi yang telah terdaftar di NU.ID dengan format `kebab-case` lower-case.
 
 Format domain:
 

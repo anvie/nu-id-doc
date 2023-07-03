@@ -9,7 +9,7 @@ title: API
 Endpoint API berikut digunakan untuk mendapatkan informasi pengguna yang berkaitan dengan kader.
 
 > **Catatan:** API yang tercantum di bawah ini merupakan API yang dapat diakses melalui NusaGW. 
-> Apabila Anda belum mengenal NusaGW, silakan baca [dokumentasi NusaGW](../NUSA/nusa-gateway) terlebih dahulu.
+> Apabila Anda belum mengenal NusaGW, silakan baca [dokumentasi NusaGW](/docs/NUSA/nusa-gateway.md) terlebih dahulu.
 > API ini masih dalam tahap pengembangan dan dapat berubah sewaktu-waktu tanpa pemberitahuan sebelumnya.
 
 
