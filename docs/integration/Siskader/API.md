@@ -14,7 +14,9 @@ Endpoint API berikut digunakan untuk mendapatkan informasi pengguna yang berkait
 
 
 Semua endpoint API berikut dapat diakses menggunakan base URL `https://siskader.nusa.nu.id`.
+
 Semua endpoint API selain `/info` membutuhkan _access token_ yang dapat diperoleh dengan mengikuti prosedur OAuth yang dijelaskan di [dokumentasi otentikasi & otorisasi](../../API/OAuth.md).
+
 
 | Endpoint | Deskripsi |
 | --- | --- |
@@ -51,7 +53,7 @@ Contoh respon apabila sukses:
 
 ### Kader {#kader-id}
 
-**Endpoint**: `/kader/{id}`
+**Endpoint**: `/v1/kader/{id}`
 
 Mendapatkan informasi kader berdasarkan ID.
 
