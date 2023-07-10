@@ -12,3 +12,5 @@ Layanan ini terpisah dan bukan merupakan bagian dari NU.ID, namun merupakan bagi
 Untuk sementara dan atas alasan kemudahan dan penyederhanaan, dokumentasi layanan resmi PBNU yang terintegrasi dengan NU.ID disatukan dalam satu website ini.
 
 Website Siskader bisa diakses di [siskader.nu.id](https://siskader.nu.id).
+
+Siskader memiliki API dan bisa diakses melalui NusaGW, lebih detail silahkan baca bagian [Dokumentasi API](./API.md).
