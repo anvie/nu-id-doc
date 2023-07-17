@@ -5,7 +5,7 @@ title: Email
 
 :::info
 
-Untuk sementara fitur email ini hanya tersedia untuk anggota dan kader NU saja.
+Fitur email ini sementara hanya tersedia untuk anggota dan kader NU yang telah terdaftar di [Siskader](https://siskader.nu.id/).
 
 :::
 
@@ -21,7 +21,10 @@ Contoh alamat email: robin@nu.id
 
 Setelah diaktifkan, email `@nu.id` bisa juga digunakan untuk login.
 
-**Limitasi:**
+## Limitasi
+
+Fitur email di NU.ID memiliki limitasi, beberapa bersifat sementara:
 
 - Pengguna NU.ID hanya dapat memiliki satu alamat email dengan domain `@nu.id`.
-- Alamat email `@nu.id` belum dapat digunakan untuk menerima dan mengirim attachment (sementara).
+- Alamat email `@nu.id` belum dapat digunakan untuk menerima dan mengirim attachment _(sementara)_.
+- Hanya bisa digunakan oleh anggota dan kader NU yang telah terdaftar di [Siskader](https://siskader.nu.id/) _(sementara)_.
