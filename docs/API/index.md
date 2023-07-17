@@ -1,6 +1,7 @@
 ---
 id: api-index
-title: API
+sidebar_label: API
+hide_title: true
 ---
 
 ## Application Programming Interface

@@ -7,7 +7,7 @@ sidebar_position: 2
 
 # Otentikasi &amp; Otorisasi
 
-NU.ID menggunakan [OAuth 2.0](https://oauth.net/2/) sebagai metode untuk authentication dan authorization. [OAuth 2.0](https://oauth.net/2/) adalah protokol standar yang digunakan untuk memberikan akses ke aplikasi pihak ketiga terhadap sumber daya yang dilindungi. Ini memungkinkan pengguna untuk memberikan izin kepada aplikasi pihak ketiga untuk mengakses data mereka tanpa harus memberikan kata sandi mereka. Dengan menggunakan OAuth v2, NU.ID dapat memberikan keamanan dan kontrol yang lebih baik kepada pengguna.
+NU.ID menggunakan [OAuth 2.0](https://oauth.net/2/) sebagai metode untuk otentikasi dan otorisasi. [OAuth 2.0](https://oauth.net/2/) adalah protokol standar yang digunakan untuk memberikan akses ke aplikasi pihak ketiga terhadap sumber daya yang dilindungi. Ini memungkinkan pengguna untuk memberikan izin kepada aplikasi pihak ketiga untuk mengakses data mereka tanpa harus memberikan kata sandi mereka. Dengan menggunakan OAuth v2, NU.ID dapat memberikan keamanan dan kontrol yang lebih baik kepada pengguna.
 
 ## Daftar API endpoint OAuth
 

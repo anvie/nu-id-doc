@@ -11,7 +11,11 @@ QRAuth adalah metode otentikasi yang menggunakan QR Code. Metode ini memungkinka
 
 ## API Endpoint
 
-> Semua endpoint API berikut dapat diakses menggunakan base URL `https://api.nu.id`, NU.ID menggunakan versioning API dengan format `v{version-number}`. Saat ini versi API yang digunakan adalah `v1`. Sehingga base URL untuk API adalah `https://api.nu.id/v1`. Contoh untuk mengakses `/qrAuth` adalah `https://api.nu.id/v1/qrAuth`.
+:::info
+
+Semua endpoint API berikut dapat diakses menggunakan base URL `https://api.nu.id`, NU.ID menggunakan versioning API dengan format `v{version-number}`. Saat ini versi API yang digunakan adalah `v1`. Sehingga base URL untuk API adalah `https://api.nu.id/v1`. Contoh untuk mengakses `/qrAuth` adalah `https://api.nu.id/v1/qrAuth`.
+
+:::
 
 | Endpoint | Deskripsi |
 | --- | --- |

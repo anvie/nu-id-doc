@@ -3,6 +3,12 @@ sidebar_position: 3
 title: Email
 ---
 
+:::info
+
+Untuk sementara fitur email ini hanya tersedia untuk anggota dan kader NU saja.
+
+:::
+
 Setiap pengguna yg terdaftar di NU.ID memiliki identitas yang unik. Identitas ini dapat digunakan untuk mengakses berbagai layanan NU.ID yang sudah terintegrasi.
 
 Selain itu NU.ID juga menyediakan sarana untuk komunikasi melalui alamat email dengan domain `@nu.id`, alamat email ini merupakan alamat email khusus untuk pengguna NU.ID yang dapat digunakan untuk berkomunikasi, menerima informasi, serta menerima notifikasi khusus dari berbagai layanan yang terintegrasi dengan NU.ID.
