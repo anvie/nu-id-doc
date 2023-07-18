@@ -27,4 +27,4 @@ Fitur email di NU.ID memiliki limitasi, beberapa bersifat sementara:
 
 - Pengguna NU.ID hanya dapat memiliki satu alamat email dengan domain `@nu.id`.
 - Alamat email `@nu.id` belum dapat digunakan untuk menerima dan mengirim attachment _(sementara)_.
-- Hanya bisa digunakan oleh anggota dan kader NU yang telah terdaftar di [Siskader](https://siskader.nu.id/) _(sementara)_.
+
