@@ -108,10 +108,6 @@ Endpoint ini akan mengembalikan token akses (`accessToken`) dan token penyegar (
 ** Contoh Permintaan: **
 
 ```json
-POST / api / authenticate HTTP / 1.1
-Host: api.nu.id
-Content-Type: application/json
-
 {
     "sessionId": "nu.id:1:client-1:YgWIexz3YJwtqD8WQcoBdkDkGsNo5obz:1678550057",
     "signature": "30460221008bf8d481763303cd260472f38fa2b3232a14f5cbea5414c54d42e8cc868a4c1b022100b5d7b8d09413649f5adf494c30488f7c0bf97b20de4f32c9065ae20f023fe50d",
@@ -123,9 +119,6 @@ Content-Type: application/json
 ** Contoh Respon Apabila Sukses: **
 
 ```json
-HTTP / 1.1 200 OK
-Content-Type: application/json
-
 {
     "data": {
         "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6ImFiYyIsImVtYWlsIjoiYWJjQGV4YW1wbGUuY29tIiwiaWF0IjoxNTE2MjM5MDIyfQ.zT8XV1DfUW9uUjwWcJ9sJxjyR40A1XHyxdKbPtLIFRE",
