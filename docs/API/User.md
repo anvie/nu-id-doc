@@ -1,7 +1,8 @@
 ---
-id: api-user
+id: user
 title: User
 hide_title: true
+sidebar_position: 3
 ---
 
 ## Daftar Endpoint User

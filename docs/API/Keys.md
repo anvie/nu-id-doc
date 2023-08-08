@@ -1,7 +1,8 @@
 ---
-id: api-keys
+id: keys
 title: Keys
 hide_title: true
+sidebar_position: 4
 ---
 
 ## Daftar Endpoint Keys
@@ -11,7 +12,7 @@ Endpoint API berikut digunakan untuk mendapatkan informasi keys milik user. Past
 | Endpoint | Deskripsi |
 | --- | --- |
 | [/keys](#keys) | Mendapatkan daftar kunci public pengguna |
-| [/keys/register](#keys-register) | Mendaftarkan pasangkan kunci baru |
+| [/keys/register](#register) | Mendaftarkan pasangkan kunci baru |
 
 
 ### Keys
@@ -46,7 +47,7 @@ Contoh respons:
 }
 ```
 
-### Menambahkan Kunci Baru
+### Register
 
 **Endpoint**: `/keys/register`
 
