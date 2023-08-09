@@ -11,41 +11,9 @@ Endpoint API berikut digunakan untuk mendapatkan informasi keys milik user. Past
 
 | Endpoint | Deskripsi |
 | --- | --- |
+| [/keys/register](#register) | Mendaftarkan pasangan kunci baru |
 | [/keys](#keys) | Mendapatkan daftar kunci public pengguna |
-| [/keys/register](#register) | Mendaftarkan pasangkan kunci baru |
 
-
-### Keys
-
-**Endpoint**: `/keys`
-
-Mendapatkan daftar kunci public pengguna.
-
-**Method:** GET
-
-**Parameter:**
-
-Tidak ada.
-
-**Respons:**
-
-* `id`: ID.
-* `name`: Nama kunci.
-* `publicKey`: Kunci public.
-* `keyType`: Tipe kunci, contoh: ecdsa, ed25519, rsa, dll.
-* `ownerId`: ID pemilik kunci.
-
-Contoh respons:
-
-```json
-{
-  "id": "5f7b5f7b5f7b5f7b5f7b5f7b",
-  "name": "MyApp",
-  "publicKey": "041390c54ff7e57da389865adab20f061ca325bb2a5fafdbc5ce41c0cf...",
-  "keyType": "ecdsa",
-  "ownerId": "5f7b5f7b5f7b5f7b5f7b5f7b"
-}
-```
 
 ### Register
 
@@ -90,3 +58,36 @@ di lokal dengan aman. Pastikan juga untuk melakukan enkripsi menggunakan kata sa
 disimpan di penyimpanan lokal.
 
 :::
+
+
+### Keys
+
+**Endpoint**: `/keys`
+
+Mendapatkan daftar kunci public pengguna.
+
+**Method:** GET
+
+**Parameter:**
+
+Tidak ada.
+
+**Respons:**
+
+* `id`: ID.
+* `name`: Nama kunci.
+* `publicKey`: Kunci public.
+* `keyType`: Tipe kunci, contoh: ecdsa, ed25519, rsa, dll.
+* `ownerId`: ID pemilik kunci.
+
+Contoh respons:
+
+```json
+{
+  "id": "5f7b5f7b5f7b5f7b5f7b5f7b",
+  "name": "MyApp",
+  "publicKey": "041390c54ff7e57da389865adab20f061ca325bb2a5fafdbc5ce41c0cf...",
+  "keyType": "ecdsa",
+  "ownerId": "5f7b5f7b5f7b5f7b5f7b5f7b"
+}
+```
