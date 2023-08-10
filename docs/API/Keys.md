@@ -27,7 +27,7 @@ Untuk sementara endpoint ini hanya bersifat menggenerasi pasangan kunci baru, be
 
 :::
 
-Operasi ini membutuhkan akses token dengan scope [`add_key`](../API/oauth#daftar-otorisasi-scope).
+Operasi ini membutuhkan akses token dengan scope [`keys_op`](../API/oauth#daftar-otorisasi-scope).
 
 **Method:** POST
 
@@ -58,7 +58,6 @@ di lokal dengan aman. Pastikan juga untuk melakukan enkripsi menggunakan kata sa
 disimpan di penyimpanan lokal.
 
 :::
-
 
 ### Keys
 
