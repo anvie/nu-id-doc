@@ -13,6 +13,7 @@ Endpoint API berikut digunakan untuk mendapatkan informasi keys milik user. Past
 | --- | --- |
 | [/keys/register](#register) | Mendaftarkan pasangan kunci baru |
 | [/keys](#keys) | Mendapatkan daftar kunci public pengguna |
+| [/keys/delete](#delete) | Menghapus pasangan kunci |
 
 
 ### Register
@@ -90,3 +91,23 @@ Contoh respons:
   "ownerId": "5f7b5f7b5f7b5f7b5f7b5f7b"
 }
 ```
+
+### Delete
+
+**Endpoint**: `/keys/delete`
+
+Menghapus pasangan kunci dari daftar kunci pengguna.
+
+Operasi ini membutuhkan akses token dengan scope [`keys_op`](../API/oauth#daftar-otorisasi-scope).
+
+**Method:** POST
+
+**Parameter:**
+
+* `id`: ID dari kunci yang akan dihapus.
+
+:::warning
+
+Perlu diperhatikan bahwa kunci yang telah dihapus tidak dapat dikembalikan lagi dan App yang menggunakan kunci tersebut tidak akan bisa mengakses menggunakan kunci tersebut lagi.
+
+:::
