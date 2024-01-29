@@ -27,7 +27,7 @@ Untuk mendapatkan alamat email khusus ini, pengguna harus memiliki akun NU.ID. S
 
 :::info
 
-Alamat email ini bisa juga digunakan untuk login di NU.ID.
+Setelah diaktifkan, alamat email khusus ini juga bisa digunakan untuk login.
 
 :::
 
