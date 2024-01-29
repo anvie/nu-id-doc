@@ -33,14 +33,8 @@ Setelah diaktifkan, alamat email khusus ini juga bisa digunakan untuk login.
 
 ## Mail Client
 
-Ada beberapa cara untuk mengakses email NU.ID, yaitu:
-
-1. Melalui webmail di [https://webmail.nu.id](https://webmail.nu.id).
-2. Melalui aplikasi email di perangkat mobile atau desktop.
-
-## Pengaturan Email Client
-
-Apabila Anda ingin mengakses email melalui perangkat mobile atau desktop, Anda dapat mengatur email client Anda menggunakan informasi berikut:
+Ada beberapa cara untuk mengakses email NU.ID, yang pertama adalah melalui web browser di alamat [https://webmail.nu.id](https://webmail.nu.id),
+dan yang kedua melalui perangkat mobile atau desktop (mail client) dengan menggunakan konfigurasi berikut:
 
 | Server Type | Server Name | Port |
 |-------------|-------------|------|
