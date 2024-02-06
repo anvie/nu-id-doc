@@ -38,5 +38,5 @@ dan yang kedua melalui perangkat mobile atau desktop (mail client) dengan menggu
 
 | Server Type | Server Name | Port |
 |-------------|-------------|------|
-| Incoming Mail Server (IMAP) | mailsrv.nu.id | 993 |
-| Outgoing Mail Server (SMTP) | mailsrv.nu.id | 465 |
+| Incoming Mail Server (IMAP) | mail.nu.id | 993 |
+| Outgoing Mail Server (SMTP) | mail.nu.id | 465 |
