@@ -1,14 +1,25 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const prismThemes = require('./src/utils/prismThemes');
+const {logoMarkSvg} = require('./src/utils/logoMark');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'NU.ID',
+  title: 'NU Identity',
+  titleDelimiter: '·',
   tagline: 'NU.ID merupakan platform identitas tunggal, merupakan jembatan menuju visi "Satu Data NU"',
   favicon: 'img/favicon.ico',
+
+  // Same type as nu-iam: Geist for text, Geist Mono for labels and code, Sora for headings.
+  headTags: [
+    {tagName: 'link', attributes: {rel: 'icon', type: 'image/svg+xml', href: '/img/icon.svg'}},
+    {tagName: 'link', attributes: {rel: 'preconnect', href: 'https://fonts.googleapis.com'}},
+    {tagName: 'link', attributes: {rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous'}},
+  ],
+  stylesheets: [
+    'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Sora:wght@500;600;700&display=swap',
+  ],
 
   // Set the production url of your site here
   url: 'https://doc.nu.id',
@@ -65,75 +76,60 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/social-card.jpg',
+      // the brand (mark, wordmark, section label) is drawn by src/theme/Navbar/Logo
       navbar: {
-        title: 'NU.ID',
-        logo: {
-          alt: 'NU.ID Logo',
-          src: 'img/logo.svg',
-        },
+        title: 'NU Identity',
         items: [
+          {to: '/docs/intro', label: 'Pengenalan', position: 'right', activeBaseRegex: '^/docs/intro$'},
+          {to: '/docs/API', label: 'API', position: 'right', activeBaseRegex: '^/docs/API'},
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Dokumentasi',
+            to: '/docs/category/integrasi',
+            label: 'Integrasi',
+            position: 'right',
+            activeBaseRegex: '^/docs/(category/integrasi|integration)',
           },
-          // {to: '/blog', label: 'Blog', position: 'left'},
-          // {
-          //   href: 'https://github.com/anvie/nu-id-doc',
-          //   label: 'GitHub',
-          //   position: 'right',
-          // },
+          {to: '/docs/faq', label: 'FAQ', position: 'right', activeBaseRegex: '^/docs/faq$'},
+          {
+            type: 'html',
+            position: 'right',
+            className: 'nuid-cta-item',
+            value: `<a class="nuid-cta" href="https://nu.id/login">${logoMarkSvg('#fff')}Masuk</a>`,
+          },
         ],
       },
+      // rendered by src/theme/Footer
       footer: {
-        style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Dokumentasi',
             items: [
-              {
-                label: 'Dokumentasi',
-                to: '/docs/intro',
-              },
+              {label: 'Pengenalan', to: '/docs/intro'},
+              {label: 'OAuth 2.0', to: '/docs/API/oauth'},
+              {label: 'QRAuth', to: '/docs/API/qrauth'},
+              {label: 'Integrasi', to: '/docs/category/integrasi'},
             ],
           },
-          // {
-          //   title: 'Community',
-          //   items: [
-          //     {
-          //       label: 'Stack Overflow',
-          //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-          //     },
-          //     {
-          //       label: 'Discord',
-          //       href: 'https://discordapp.com/invite/docusaurus',
-          //     },
-          //     {
-          //       label: 'Twitter',
-          //       href: 'https://twitter.com/docusaurus',
-          //     },
-          //   ],
-          // },
-          // {
-          //   title: 'More',
-          //   items: [
-          //     // {
-          //     //   label: 'Blog',
-          //     //   to: '/blog',
-          //     // },
-          //     {
-          //       label: 'GitHub',
-          //       href: 'https://github.com/facebook/docusaurus',
-          //     },
-          //   ],
-          // },
+          {
+            title: 'Platform',
+            items: [
+              {label: 'NU Identity', href: 'https://nu.id'},
+              {label: 'Developer Console', href: 'https://nu.id/dashboard/apps'},
+            ],
+          },
+          {
+            title: 'Lainnya',
+            items: [
+              {label: 'Kebijakan Privasi', to: '/docs/privacy'},
+              {label: 'muktamar@nu.id', href: 'mailto:muktamar@nu.id'},
+              {label: 'contact@nu.id', href: 'mailto:contact@nu.id'},
+            ],
+          },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} NU.ID`,
+        copyright: `© 2023–${new Date().getFullYear()} Pengurus Besar Nahdlatul Ulama.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: prismThemes.light,
+        darkTheme: prismThemes.dark,
       },
     }),
 };
