@@ -1,10 +1,22 @@
 {
   "title": {
-    "message": "NU.ID",
+    "message": "NU Identity",
     "description": "The title in the navbar"
   },
-  "item.label.Dokumentasi": {
-    "message": "Dokumentasi",
-    "description": "Navbar item with label Dokumentasi"
+  "item.label.Pengenalan": {
+    "message": "Pengenalan",
+    "description": "Navbar item with label Pengenalan"
+  },
+  "item.label.API": {
+    "message": "API",
+    "description": "Navbar item with label API"
+  },
+  "item.label.Integrasi": {
+    "message": "Integrasi",
+    "description": "Navbar item with label Integrasi"
+  },
+  "item.label.FAQ": {
+    "message": "FAQ",
+    "description": "Navbar item with label FAQ"
   }
 }

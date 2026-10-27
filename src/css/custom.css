@@ -1,30 +1,962 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * NU Identity look for the docs, matching nu-iam (tailwind.config.cjs, src/styles/globals.css):
+ * NU green with a purple accent, hairline borders, mono micro-labels and Sora headings.
+ * The --nuid-* tokens carry the palette; the Infima variables below are mapped onto them,
+ * so dark mode only has to redefine the tokens.
  */
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  /* palette (nu-iam brand / accent scales) */
+  --nuid-brand-50: #e9fbf3;
+  --nuid-brand-300: #6fddad;
+  --nuid-brand-400: #3dca8f;
+  --nuid-brand-500: #19b378;
+  --nuid-brand-600: #149e69;
+  --nuid-brand-700: #0f8a5b;
+  --nuid-brand-800: #0c6e49;
+
+  /* surfaces and text */
+  --nuid-ink: #0a0a0a;
+  --nuid-ink-soft: #404040;
+  --nuid-ink-muted: #737373;
+  --nuid-ink-faint: #a3a3a3;
+  --nuid-canvas: #ffffff;
+  --nuid-stone: #f4f4f4;
+  --nuid-wash: rgba(244, 244, 244, 0.4); /* bg-stone/40 */
+  --nuid-line: rgba(10, 10, 10, 0.08); /* hairline */
+  --nuid-line-strong: rgba(10, 10, 10, 0.16);
+  --nuid-line-hover: rgba(10, 10, 10, 0.4);
+  --nuid-header-bg: rgba(255, 255, 255, 0.8);
+  --nuid-code-bg: #fafafa;
+  --nuid-link: var(--nuid-brand-700);
+  --nuid-link-hover: var(--nuid-brand-800);
+  --nuid-active-bg: var(--nuid-brand-50);
+  --nuid-active-text: var(--nuid-brand-800);
+  --nuid-shadow-hover: 0 4px 16px -4px rgba(10, 10, 10, 0.08);
+
+  /* admonition tones */
+  --nuid-info: #6a35ee;
+  --nuid-info-bg: rgba(124, 77, 252, 0.05);
+  --nuid-info-line: rgba(124, 77, 252, 0.22);
+  --nuid-tip: var(--nuid-brand-700);
+  --nuid-tip-bg: rgba(25, 179, 120, 0.06);
+  --nuid-tip-line: rgba(25, 179, 120, 0.28);
+  --nuid-warn: #b45309;
+  --nuid-warn-bg: rgba(245, 158, 11, 0.07);
+  --nuid-warn-line: rgba(245, 158, 11, 0.32);
+  --nuid-danger: #dc2626;
+  --nuid-danger-bg: rgba(220, 38, 38, 0.05);
+  --nuid-danger-line: rgba(220, 38, 38, 0.25);
+
+  /* type */
+  --nuid-font-sans: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --nuid-font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --nuid-font-brand: 'Sora', 'Geist', system-ui, sans-serif;
+
+  --nuid-radius: 8px; /* buttons, menu items */
+  --nuid-radius-card: 6px; /* every card on the site */
+
+  /* plus mark (the hairline signature) and a thin chevron, as images */
+  --nuid-plus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M6 1v10M1 6h10' stroke='%23a3a3a3' stroke-width='1'/%3E%3C/svg%3E");
+  --nuid-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23737373' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 15 6-6 6 6'/%3E%3C/svg%3E");
+
+  /* Infima */
+  --ifm-color-primary: #19b378;
+  --ifm-color-primary-dark: #149e69;
+  --ifm-color-primary-darker: #0f8a5b;
+  --ifm-color-primary-darkest: #0c6e49;
+  --ifm-color-primary-light: #3dca8f;
+  --ifm-color-primary-lighter: #6fddad;
+  --ifm-color-primary-lightest: #a3eccb;
+
+  --ifm-font-family-base: var(--nuid-font-sans);
+  --ifm-font-family-monospace: var(--nuid-font-mono);
+  --ifm-heading-font-family: var(--nuid-font-brand);
+  --ifm-heading-font-weight: 600;
+  --ifm-heading-color: var(--nuid-ink);
+  --ifm-font-color-base: var(--nuid-ink-soft);
+  --ifm-font-color-secondary: var(--nuid-ink-muted);
+  --ifm-h1-font-size: 2.25rem;
+  --ifm-h2-font-size: 1.5rem;
+  --ifm-h3-font-size: 1.1875rem;
+  --ifm-h4-font-size: 1rem;
+
+  --ifm-background-color: var(--nuid-canvas);
+  --ifm-background-surface-color: var(--nuid-canvas);
+  --ifm-link-color: var(--nuid-link);
+  --ifm-link-hover-color: var(--nuid-link-hover);
+  --ifm-link-hover-decoration: none;
+  --ifm-global-radius: var(--nuid-radius);
+  --ifm-global-shadow-lw: none;
+  --ifm-hr-background-color: var(--nuid-line);
+  --ifm-hr-height: 1px;
+  --ifm-toc-border-color: var(--nuid-line);
+  --ifm-table-border-color: var(--nuid-line);
+  --ifm-table-stripe-background: transparent;
+  --ifm-table-head-background: var(--nuid-wash);
+  --ifm-blockquote-border-color: var(--nuid-line-strong);
+  --ifm-blockquote-color: var(--nuid-ink-muted);
+
+  --ifm-code-font-size: 88%;
+  --ifm-code-background: rgba(10, 10, 10, 0.04);
+  --ifm-code-border-radius: 4px;
+  --ifm-pre-background: var(--nuid-code-bg);
+  --ifm-pre-line-height: 1.6;
+  --docusaurus-highlighted-code-line-bg: rgba(25, 179, 120, 0.1);
+
+  --ifm-navbar-height: 4rem;
+  --ifm-navbar-background-color: var(--nuid-canvas); /* also the mobile sheet */
+  --ifm-navbar-shadow: none;
+  --ifm-navbar-padding-horizontal: clamp(16px, 3vw, 28px);
+  --ifm-navbar-item-padding-horizontal: 0.75rem;
+  --ifm-navbar-link-color: var(--nuid-ink-muted);
+  --ifm-navbar-link-hover-color: var(--nuid-ink);
+  --ifm-navbar-link-active-color: var(--nuid-ink);
+  --ifm-navbar-sidebar-width: min(20rem, 85vw);
+
+  --ifm-menu-color: var(--nuid-ink-soft);
+  --ifm-menu-color-active: var(--nuid-ink);
+  --ifm-menu-color-background-active: transparent;
+  --ifm-menu-color-background-hover: var(--nuid-stone);
+  --ifm-menu-link-padding-vertical: 0.5rem;
+  --ifm-menu-link-padding-horizontal: 0.75rem;
+  --ifm-menu-link-sublist-icon: var(--nuid-chevron);
+  --ifm-menu-link-sublist-icon-filter: none;
+
+  --ifm-pagination-nav-border-radius: var(--nuid-radius-card);
+  --ifm-card-border-radius: var(--nuid-radius-card);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+/* Dark: the palette of nu-iam's dark developer panel (bg-ink with lit green) */
+:root[data-theme='dark'] {
+  --nuid-ink: #fafafa;
+  --nuid-ink-soft: #d4d4d4;
+  --nuid-ink-muted: #a3a3a3;
+  --nuid-ink-faint: #737373;
+  --nuid-canvas: #0a0a0a;
+  --nuid-stone: #171717;
+  --nuid-wash: rgba(255, 255, 255, 0.025);
+  --nuid-line: rgba(255, 255, 255, 0.08);
+  --nuid-line-strong: rgba(255, 255, 255, 0.16);
+  --nuid-line-hover: rgba(255, 255, 255, 0.36);
+  --nuid-header-bg: rgba(10, 10, 10, 0.8);
+  --nuid-code-bg: #111111;
+  --nuid-link: var(--nuid-brand-400);
+  --nuid-link-hover: var(--nuid-brand-300);
+  --nuid-active-bg: rgba(25, 179, 120, 0.12);
+  --nuid-active-text: var(--nuid-brand-300);
+  --nuid-shadow-hover: 0 4px 16px -4px rgba(0, 0, 0, 0.6);
+
+  --nuid-info: #b392ff;
+  --nuid-info-bg: rgba(124, 77, 252, 0.08);
+  --nuid-info-line: rgba(124, 77, 252, 0.3);
+  --nuid-tip: var(--nuid-brand-300);
+  --nuid-tip-bg: rgba(25, 179, 120, 0.08);
+  --nuid-tip-line: rgba(25, 179, 120, 0.3);
+  --nuid-warn: #fcd34d;
+  --nuid-warn-bg: rgba(245, 158, 11, 0.08);
+  --nuid-warn-line: rgba(245, 158, 11, 0.3);
+  --nuid-danger: #f87171;
+  --nuid-danger-bg: rgba(220, 38, 38, 0.1);
+  --nuid-danger-line: rgba(248, 113, 113, 0.3);
+
+  --nuid-plus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M6 1v10M1 6h10' stroke='%23525252' stroke-width='1'/%3E%3C/svg%3E");
+  --nuid-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a3a3a3' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 15 6-6 6 6'/%3E%3C/svg%3E");
+
+  --ifm-color-primary: #3dca8f;
+  --ifm-color-primary-dark: #26be80;
+  --ifm-color-primary-darker: #19b378;
+  --ifm-color-primary-darkest: #149e69;
+  --ifm-color-primary-light: #6fddad;
+  --ifm-color-primary-lighter: #a3eccb;
+  --ifm-color-primary-lightest: #d0f6e4;
+  --ifm-background-color: var(--nuid-canvas);
+  --ifm-background-surface-color: var(--nuid-canvas);
+  --ifm-navbar-background-color: var(--nuid-canvas);
+  --ifm-code-background: rgba(255, 255, 255, 0.06);
+  --docusaurus-highlighted-code-line-bg: rgba(61, 202, 143, 0.12);
+}
+
+/* the sidebar runs a little narrower, like the nu-iam dashboard's */
+html:root {
+  --doc-sidebar-width: 272px;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.025em;
+}
+
+a {
+  transition: color 0.2s;
+}
+
+::selection {
+  background: #19b378;
+  color: #fff;
+}
+
+/* ---------------------------------------------------------------- shared pieces */
+
+/* mono micro-label */
+.label-mono {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--nuid-font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--nuid-ink-muted);
+}
+
+.nuid-container {
+  width: 100%;
+  max-width: 84rem;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 48px);
+}
+
+/* brand: mark, "NU Identity" in Sora, and in the header a rule and section label */
+.nuid-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-right: 0;
+  color: var(--nuid-ink);
+}
+.nuid-brand:hover {
+  color: var(--nuid-ink);
+  text-decoration: none;
+}
+.nuid-brand__mark {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+.nuid-brand__name {
+  font-family: var(--nuid-font-brand);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+}
+.nuid-brand__section {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 0.375rem;
+}
+.nuid-brand__rule {
+  width: 1px;
+  height: 1.25rem;
+  background: var(--nuid-line-strong);
+}
+@media (max-width: 639px) {
+  .nuid-brand__section {
+    display: none;
+  }
+}
+
+/* The mark assembles on load: the arch drops in and the bowl is drawn from its right tip
+   round to the left. On hover the two open apart. The keyframes only fill backwards, so
+   once they finish the hover transitions own the transform. */
+.nuid-mark {
+  overflow: visible;
+}
+.nuid-mark path {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.nuid-mark [data-part='t'] {
+  animation: nuid-t 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
+}
+.nuid-mark .nuid-sweep {
+  stroke-dasharray: 1 1;
+  animation: nuid-sweep 0.75s cubic-bezier(0.65, 0, 0.35, 1) 0.35s backwards;
+}
+.nuid-brand:hover .nuid-mark [data-part='t'] {
+  transform: translateY(-7px);
+}
+.nuid-brand:hover .nuid-mark [data-part='u'] {
+  transform: translateY(5px);
+}
+@keyframes nuid-t {
+  from {
+    transform: translateY(-90%);
+    opacity: 0;
+  }
+}
+@keyframes nuid-sweep {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nuid-mark path {
+    animation: none !important;
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------------- header */
+
+/* The blur sits on a layer behind the bar: a backdrop-filter on .navbar itself would trap
+   the fixed mobile sheet inside the 64px bar. */
+.navbar {
+  background-color: transparent;
+  border-bottom: 1px solid var(--nuid-line);
+}
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--nuid-header-bg);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+}
+
+.navbar__link {
+  font-family: var(--nuid-font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* order on the right: links, theme switch, sign-in button (as in the nu-iam header) */
+.navbar__items--right > [class*='colorModeToggle'] {
+  order: 1;
+  margin-left: 0.75rem;
+}
+.navbar__items--right > .nuid-cta-item {
+  order: 2;
+  display: flex;
+  margin-left: 0.75rem;
+  padding: 0;
+}
+
+.nuid-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--nuid-radius);
+  background: var(--nuid-brand-500);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+.nuid-cta:hover {
+  background: var(--nuid-brand-600);
+  color: #fff;
+  text-decoration: none;
+}
+.nuid-cta:focus-visible {
+  outline: 2px solid var(--nuid-brand-500);
+  outline-offset: 2px;
+}
+.nuid-cta svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* round hairline buttons: theme switch, menu toggle, sheet close */
+.navbar [class*='toggleButton'],
+.navbar__toggle,
+.navbar-sidebar__close {
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--nuid-line-strong);
+  border-radius: 9999px;
+  color: var(--nuid-ink-soft);
+  transition: border-color 0.2s, color 0.2s;
+}
+.navbar [class*='toggleButton']:hover,
+.navbar__toggle:hover,
+.navbar-sidebar__close:hover {
+  background: transparent;
+  border-color: var(--nuid-line-hover);
+  color: var(--nuid-ink);
+}
+.navbar [class*='toggleButton'],
+.navbar-sidebar__close {
+  display: grid;
+}
+.navbar [class*='toggleButton'] svg {
+  width: 17px;
+  height: 17px;
+}
+.navbar__toggle svg,
+.navbar-sidebar__close svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* phones: brand left, sign-in and menu on the right, and the sheet slides in from the right */
+@media (max-width: 996px) {
+  .navbar__inner > .navbar__items:first-child {
+    display: contents;
+  }
+  .navbar__inner > .navbar__items:first-child > .navbar__brand {
+    order: 0;
+    margin-right: auto;
+  }
+  .navbar__inner > .navbar__items--right {
+    order: 1;
+  }
+  .navbar__toggle {
+    display: grid;
+    order: 2;
+    margin: 0 0 0 0.5rem;
+  }
+  .navbar__items--right > .nuid-cta-item {
+    margin-left: 0;
+  }
+  .nuid-cta {
+    padding: 0.5rem 0.875rem;
+  }
+
+  .navbar-sidebar {
+    left: auto;
+    right: 0;
+    transform: translate3d(100%, 0, 0);
+    box-shadow: none;
+    border-left: 1px solid var(--nuid-line);
+  }
+  .navbar-sidebar--show .navbar-sidebar {
+    transform: translate3d(0, 0, 0);
+  }
+  .navbar-sidebar__backdrop {
+    background-color: rgba(10, 10, 10, 0.35);
+  }
+  .navbar-sidebar__brand {
+    border-bottom: 1px solid var(--nuid-line);
+  }
+  .navbar-sidebar__brand .nuid-brand__section,
+  .navbar-sidebar .nuid-cta-item {
+    display: none;
+  }
+  .navbar-sidebar__brand .navbar__brand {
+    margin-right: auto;
+  }
+  .navbar-sidebar__brand [class*='colorModeToggle'] {
+    margin-right: 0.5rem;
+  }
+  .navbar-sidebar__items .menu {
+    padding: 1rem;
+  }
+  .navbar-sidebar__back {
+    background: transparent;
+    font-family: var(--nuid-font-mono);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--nuid-ink-muted);
+  }
+}
+
+/* ---------------------------------------------------------------- sidebar */
+
+.theme-doc-sidebar-container .menu {
+  padding: 1.75rem 1rem 2.5rem;
+}
+.menu {
+  font-weight: 400;
+}
+.menu__list-item:not(:first-child) {
+  margin-top: 0.125rem;
+}
+.menu__link {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-radius: var(--nuid-radius);
+}
+.menu__link:hover {
+  color: var(--nuid-ink);
+}
+/* a category holding the current page */
+.menu__link--active {
+  font-weight: 500;
+}
+/* the current page: green wash, and a short green rule on the left edge */
+.menu .menu__link[aria-current='page'] {
+  background-color: var(--nuid-active-bg);
+  color: var(--nuid-active-text);
+}
+.menu__link[aria-current='page']::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -1rem;
+  width: 1px;
+  height: 1.25rem;
+  transform: translateY(-50%);
+  background: var(--nuid-brand-500);
+}
+.menu__list-item-collapsible,
+.menu__caret {
+  border-radius: var(--nuid-radius);
+}
+.menu__list-item-collapsible--active {
+  background: var(--nuid-active-bg);
+}
+.menu__list-item-collapsible--active .menu__caret:hover {
+  background: transparent;
+}
+.menu__link--sublist-caret::after,
+.menu__caret::before {
+  background-size: 1rem 1rem;
+}
+
+/* nested pages hang off a hairline */
+.menu__list .menu__list {
+  margin-left: 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--nuid-line);
+}
+.menu__list .menu__list .menu__link[aria-current='page']::before {
+  left: calc(-0.5rem - 1px);
+}
+
+/* ---------------------------------------------------------------- page */
+
+main[class*='docMainContainer'] > .container {
+  padding-top: 2.5rem !important;
+  padding-bottom: 4rem !important;
+}
+
+/* breadcrumbs read like the nu-iam page label: + API / OAUTH */
+.theme-doc-breadcrumbs {
+  margin-bottom: 1rem;
+}
+.breadcrumbs__item {
+  display: inline-flex;
+  align-items: center;
+}
+.breadcrumbs .breadcrumbs__link {
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  font-family: var(--nuid-font-mono);
+  font-size: 11px;
+  line-height: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--nuid-ink-muted);
+}
+.breadcrumbs a.breadcrumbs__link:hover {
+  background: none;
+  color: var(--nuid-ink);
+}
+.breadcrumbs .breadcrumbs__item--active .breadcrumbs__link {
+  color: var(--nuid-ink-soft);
+}
+.breadcrumbs__item:not(:last-child)::after {
+  content: '/';
+  width: auto;
+  height: auto;
+  margin: 0 0.625rem;
+  background: none;
+  filter: none;
+  opacity: 1;
+  font-family: var(--nuid-font-mono);
+  font-size: 11px;
+  color: var(--nuid-ink-faint);
+}
+/* the home crumb becomes the plus mark */
+.breadcrumbs__link [class*='breadcrumbHomeIcon'] {
+  display: none;
+}
+.breadcrumbs__link:has([class*='breadcrumbHomeIcon'])::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: var(--nuid-plus) center / contain no-repeat;
+}
+.breadcrumbs__item:has([class*='breadcrumbHomeIcon'])::after {
+  content: '';
+  margin: 0 0.25rem;
+}
+
+/* prose */
+.markdown h1,
+.markdown h1:first-child {
+  --ifm-h1-font-size: 2.25rem;
+  line-height: 1.15;
+}
+[class*='generatedIndexPage'] header h1 {
+  font-size: 2.25rem;
+  line-height: 1.15;
+}
+.markdown > h2 {
+  margin-top: 2.75rem;
+}
+.markdown > h2:first-child {
+  margin-top: 0;
+}
+.markdown > h3 {
+  margin-top: 2rem;
+}
+.markdown a:not(.hash-link):not(.card) {
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: rgba(25, 179, 120, 0.4);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.markdown a:not(.hash-link):not(.card):hover {
+  text-decoration-color: currentColor;
+}
+.markdown strong {
+  color: var(--nuid-ink);
+  font-weight: 600;
+}
+.markdown blockquote {
+  border-left-width: 2px;
+}
+
+/* inline code */
+:not(pre) > code {
+  padding: 0.1em 0.35em;
+  border: 1px solid var(--nuid-line);
+  vertical-align: baseline;
+  color: var(--nuid-ink);
+}
+
+/* code blocks: hairline card */
+.theme-code-block {
+  border: 1px solid var(--nuid-line-strong);
+  border-radius: var(--nuid-radius-card);
+  overflow: hidden;
+}
+.theme-code-block [class*='codeBlockTitle'] {
+  border-bottom: 1px solid var(--nuid-line);
+  padding: 0.625rem 1rem;
+  font-family: var(--nuid-font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--nuid-ink-muted);
+}
+.theme-code-block button[class*='copyButton'] {
+  border: 1px solid var(--nuid-line-strong);
+  border-radius: var(--nuid-radius-card);
+  color: var(--nuid-ink-muted);
+}
+
+/* tables: like nu-iam's .table-modern, inside a hairline card */
+.markdown table {
+  width: fit-content;
+  max-width: 100%;
+  border: 1px solid var(--nuid-line-strong);
+  border-radius: var(--nuid-radius-card);
+  font-size: 0.875rem;
+}
+.markdown table thead tr {
+  border-bottom: 0;
+}
+.markdown table tr {
+  border-top: 0;
+  background: transparent;
+}
+.markdown table th,
+.markdown table td {
+  border: 0;
+  border-bottom: 1px solid var(--nuid-line);
+  padding: 0.75rem 1.25rem;
+  text-align: left;
+  vertical-align: top;
+}
+.markdown table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.markdown table th {
+  font-family: var(--nuid-font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--nuid-ink-muted);
+  white-space: nowrap;
+}
+.markdown table td {
+  color: var(--nuid-ink-soft);
+}
+
+/* admonitions: a tinted hairline card headed by a dot and a mono label */
+.alert.theme-admonition {
+  --nuid-tone: var(--nuid-ink-muted);
+  --nuid-tone-bg: var(--nuid-wash);
+  --nuid-tone-line: var(--nuid-line-strong);
+  --ifm-alert-foreground-color: var(--nuid-ink-soft);
+  --ifm-alert-border-color: var(--nuid-tone-line);
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--nuid-tone-line);
+  border-radius: var(--nuid-radius-card);
+  background: var(--nuid-tone-bg);
+  box-shadow: none;
+}
+.alert.theme-admonition-info {
+  --nuid-tone: var(--nuid-info);
+  --nuid-tone-bg: var(--nuid-info-bg);
+  --nuid-tone-line: var(--nuid-info-line);
+}
+.alert.theme-admonition-tip {
+  --nuid-tone: var(--nuid-tip);
+  --nuid-tone-bg: var(--nuid-tip-bg);
+  --nuid-tone-line: var(--nuid-tip-line);
+}
+.alert.theme-admonition-caution,
+.alert.theme-admonition-warning {
+  --nuid-tone: var(--nuid-warn);
+  --nuid-tone-bg: var(--nuid-warn-bg);
+  --nuid-tone-line: var(--nuid-warn-line);
+}
+.alert.theme-admonition-danger {
+  --nuid-tone: var(--nuid-danger);
+  --nuid-tone-bg: var(--nuid-danger-bg);
+  --nuid-tone-line: var(--nuid-danger-line);
+}
+.theme-admonition [class*='admonitionHeading'] {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--nuid-font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1rem;
+  letter-spacing: 0.14em;
+  color: var(--nuid-tone);
+}
+.theme-admonition [class*='admonitionIcon'] {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0;
+  border-radius: 9999px;
+  background: var(--nuid-tone);
+}
+.theme-admonition [class*='admonitionIcon'] svg {
+  display: none;
+}
+.alert.theme-admonition a {
+  color: var(--nuid-link);
+}
+
+/* table of contents */
+.theme-doc-toc-desktop::before {
+  content: 'Di halaman ini';
+  display: block;
+  margin-bottom: 0.25rem;
+  padding-left: 20px;
+  background: var(--nuid-plus) left center / 12px no-repeat;
+  font-family: var(--nuid-font-mono);
+  font-size: 11px;
+  line-height: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--nuid-ink-muted);
+}
+.table-of-contents {
+  font-size: 0.8125rem;
+}
+/* phones: the collapsible "on this page" box */
+.theme-doc-toc-mobile {
+  border: 1px solid var(--nuid-line-strong);
+  border-radius: var(--nuid-radius-card);
+  background: var(--nuid-canvas);
+}
+.theme-doc-toc-mobile > button {
+  padding: 0.75rem 1rem;
+  font-family: var(--nuid-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--nuid-ink-muted);
+}
+.theme-doc-toc-mobile > button::after {
+  background-size: 1rem;
+}
+.theme-doc-toc-mobile .table-of-contents {
+  border-top: 1px solid var(--nuid-line);
+}
+.table-of-contents__link {
+  color: var(--nuid-ink-muted);
+}
+.table-of-contents__link:hover {
+  color: var(--nuid-ink);
+}
+.table-of-contents__link--active {
+  color: var(--nuid-link);
+  font-weight: 500;
+}
+
+/* previous / next */
+.pagination-nav__link {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--nuid-line-strong);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.pagination-nav__link:hover {
+  border-color: var(--nuid-line-hover);
+  box-shadow: var(--nuid-shadow-hover);
+}
+.pagination-nav__sublabel {
+  margin-bottom: 0.375rem;
+  font-family: var(--nuid-font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--nuid-ink-muted);
+}
+.pagination-nav__label {
+  font-family: var(--nuid-font-brand);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--nuid-ink);
+}
+.pagination-nav__link--prev .pagination-nav__label::before {
+  content: '← ';
+}
+.pagination-nav__link--next .pagination-nav__label::after {
+  content: ' →';
+}
+
+/* doc footer: edit link, last updated */
+.theme-doc-footer {
+  margin-top: 3rem;
+}
+.theme-edit-this-page {
+  font-family: var(--nuid-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--nuid-ink-muted);
+}
+.theme-edit-this-page:hover {
+  color: var(--nuid-ink);
+}
+
+/* category index cards */
+.card[class*='cardContainer'] {
+  --ifm-link-color: var(--nuid-ink);
+  --ifm-link-hover-color: var(--nuid-ink);
+  border: 1px solid var(--nuid-line-strong);
+  box-shadow: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.card[class*='cardContainer']:hover {
+  border-color: var(--nuid-line-hover);
+  box-shadow: var(--nuid-shadow-hover);
+}
+.card[class*='cardContainer'] [class*='cardTitle'] {
+  font-size: 1.0625rem;
+  letter-spacing: -0.01em;
+}
+.card[class*='cardContainer'] [class*='cardDescription'] {
+  color: var(--nuid-ink-muted);
+}
+
+.theme-back-to-top-button {
+  border: 1px solid var(--nuid-line-strong);
+  border-radius: 9999px;
+  background-color: var(--nuid-canvas);
+  box-shadow: 0 1px 2px rgba(10, 10, 10, 0.04);
+}
+.theme-back-to-top-button:hover {
+  background-color: var(--nuid-stone);
+}
+
+/* ---------------------------------------------------------------- footer */
+
+.nuid-footer {
+  border-top: 1px solid var(--nuid-line);
+  background: var(--nuid-wash);
+}
+.nuid-footer > .nuid-container {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+.nuid-footer__grid {
+  display: grid;
+  gap: 2.5rem;
+}
+@media (min-width: 768px) {
+  .nuid-footer__grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  }
+}
+.nuid-footer__about {
+  max-width: 20rem;
+  margin: 1rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.625;
+  color: var(--nuid-ink-muted);
+}
+.nuid-footer h4 {
+  margin: 0;
+}
+.nuid-footer__links {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.nuid-footer__links a {
+  font-size: 0.875rem;
+  color: var(--nuid-ink-muted);
+}
+.nuid-footer__links a:hover {
+  color: var(--nuid-brand-600);
+  text-decoration: none;
+}
+.nuid-footer__base {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--nuid-line);
+  font-family: var(--nuid-font-mono);
+  font-size: 0.75rem;
+  color: var(--nuid-ink-muted);
+}
+.nuid-footer__base p {
+  margin: 0;
+}
+.nuid-footer__accent {
+  color: var(--nuid-brand-600);
+}
+@media (min-width: 640px) {
+  .nuid-footer__base {
+    flex-direction: row;
+  }
 }

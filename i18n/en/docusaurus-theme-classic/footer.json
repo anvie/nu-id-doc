@@ -1,14 +1,50 @@
 {
-  "link.title.Docs": {
-    "message": "Docs",
-    "description": "The title of the footer links column with title=Docs in the footer"
+  "link.title.Dokumentasi": {
+    "message": "Dokumentasi",
+    "description": "The title of the footer links column with title=Dokumentasi in the footer"
   },
-  "link.item.label.Tutorial": {
-    "message": "Tutorial",
-    "description": "The label of footer link with label=Tutorial linking to /docs/intro"
+  "link.title.Platform": {
+    "message": "Platform",
+    "description": "The title of the footer links column with title=Platform in the footer"
   },
-  "copyright": {
-    "message": "Copyright © 2023 NU.ID",
-    "description": "The footer copyright"
+  "link.title.Lainnya": {
+    "message": "Lainnya",
+    "description": "The title of the footer links column with title=Lainnya in the footer"
+  },
+  "link.item.label.Pengenalan": {
+    "message": "Pengenalan",
+    "description": "The label of footer link with label=Pengenalan linking to /docs/intro"
+  },
+  "link.item.label.OAuth 2.0": {
+    "message": "OAuth 2.0",
+    "description": "The label of footer link with label=OAuth 2.0 linking to /docs/API/oauth"
+  },
+  "link.item.label.QRAuth": {
+    "message": "QRAuth",
+    "description": "The label of footer link with label=QRAuth linking to /docs/API/qrauth"
+  },
+  "link.item.label.Integrasi": {
+    "message": "Integrasi",
+    "description": "The label of footer link with label=Integrasi linking to /docs/category/integrasi"
+  },
+  "link.item.label.NU Identity": {
+    "message": "NU Identity",
+    "description": "The label of footer link with label=NU Identity linking to https://nu.id"
+  },
+  "link.item.label.Developer Console": {
+    "message": "Developer Console",
+    "description": "The label of footer link with label=Developer Console linking to https://nu.id/dashboard/apps"
+  },
+  "link.item.label.Kebijakan Privasi": {
+    "message": "Kebijakan Privasi",
+    "description": "The label of footer link with label=Kebijakan Privasi linking to /docs/privacy"
+  },
+  "link.item.label.muktamar@nu.id": {
+    "message": "muktamar@nu.id",
+    "description": "The label of footer link with label=muktamar@nu.id linking to mailto:muktamar@nu.id"
+  },
+  "link.item.label.contact@nu.id": {
+    "message": "contact@nu.id",
+    "description": "The label of footer link with label=contact@nu.id linking to mailto:contact@nu.id"
   }
 }
