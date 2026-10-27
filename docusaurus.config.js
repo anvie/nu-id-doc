@@ -105,7 +105,6 @@ const config = {
             items: [
               {label: 'Pengenalan', to: '/docs/intro'},
               {label: 'OAuth 2.0', to: '/docs/API/oauth'},
-              {label: 'QRAuth', to: '/docs/API/qrauth'},
               {label: 'Integrasi', to: '/docs/category/integrasi'},
             ],
           },

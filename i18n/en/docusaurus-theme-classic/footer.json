@@ -19,10 +19,6 @@
     "message": "OAuth 2.0",
     "description": "The label of footer link with label=OAuth 2.0 linking to /docs/API/oauth"
   },
-  "link.item.label.QRAuth": {
-    "message": "QRAuth",
-    "description": "The label of footer link with label=QRAuth linking to /docs/API/qrauth"
-  },
   "link.item.label.Integrasi": {
     "message": "Integrasi",
     "description": "The label of footer link with label=Integrasi linking to /docs/category/integrasi"

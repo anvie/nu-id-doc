@@ -7,7 +7,7 @@ sidebar_position: 4
 
 ## Daftar Endpoint Keys
 
-Endpoint API berikut digunakan untuk mendapatkan informasi keys milik user. Pastikan pengguna sudah terotentikasi menggunakan [OAuth](oauth) atau [QRAuth](qrauth). Setiap pemanggilan fungsi API ini harus menyertakan access token yang didapatkan dari proses [OAuth](oauth) atau [QRAuth](qrauth).
+Endpoint API berikut digunakan untuk mendapatkan informasi keys milik user. Pastikan pengguna sudah terotentikasi menggunakan [OAuth](oauth). Setiap pemanggilan fungsi API ini harus menyertakan access token yang didapatkan dari proses [OAuth](oauth).
 
 | Endpoint | Deskripsi |
 | --- | --- |

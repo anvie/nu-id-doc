@@ -7,7 +7,7 @@ sidebar_position: 3
 
 ## Daftar Endpoint User
 
-Endpoint API berikut digunakan untuk mendapatkan informasi pengguna yang sedang login. Pastikan pengguna sudah terotentikasi menggunakan [OAuth](oauth) atau [QRAuth](qrauth). Setiap pemanggilan fungsi API ini harus menyertakan access token yang didapatkan dari proses [OAuth](oauth) atau [QRAuth](qrauth).
+Endpoint API berikut digunakan untuk mendapatkan informasi pengguna yang sedang login. Pastikan pengguna sudah terotentikasi menggunakan [OAuth](oauth). Setiap pemanggilan fungsi API ini harus menyertakan access token yang didapatkan dari proses [OAuth](oauth).
 
 > Semua endpoint API berikut dapat diakses menggunakan base URL `https://api.nu.id`, NU.ID menggunakan versioning API dengan format `v{version-number}`. Saat ini versi API yang digunakan adalah `v1`. Sehingga base URL untuk API adalah `https://api.nu.id/v1`. Contoh untuk mengakses `/user/me` adalah `https://api.nu.id/v1/user/me`.
 
